@@ -1,0 +1,44 @@
+{
+  "$schema" : "https://json-schema.org/draft/2019-09/schema",
+  "$defs" : {
+    "NumeComplet" : {
+      "type" : "object",
+      "properties" : {
+        "nume" : {
+          "type" : "string",
+          "additionalProperties" : false
+        },
+        "prenume" : {
+          "type" : "string",
+          "additionalProperties" : false
+        }
+      },
+      "required" : [ "nume" ],
+      "title" : "NumeComplet",
+      "additionalProperties" : false
+    },
+    "Stare" : {
+      "type" : "string",
+      "enum" : [ "ACTIVAT", "DEACTIVAT" ],
+      "title" : "Stare"
+    }
+  },
+  "type" : "object",
+  "properties" : {
+    "id" : {
+      "type" : "string",
+      "additionalProperties" : false
+    },
+    "numeComplet" : {
+      "$ref" : "#/$defs/NumeComplet",
+      "additionalProperties" : false
+    },
+    "stare" : {
+      "$ref" : "#/$defs/Stare",
+      "additionalProperties" : false
+    }
+  },
+  "required" : [ "id", "numeComplet" ],
+  "title" : "PersoanaAFostAdaugata",
+  "additionalProperties" : false
+}
